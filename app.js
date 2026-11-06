@@ -18,8 +18,9 @@
   // For local file/tests: /d/{DATA_PATH}/
   function base() {
     if (!DATA_PATH) return null;
-    // GitHub Pages / static host: site root serves /d/{DATA_PATH}/
-    return `/d/${DATA_PATH}`;
+    // Project Pages live under /Horizon/; keep data relative to the app root.
+    const root = location.pathname.replace(/\/[^/]*$/, "/");
+    return `${root}d/${DATA_PATH}`;
   }
 
   async function getJSON(name) {
