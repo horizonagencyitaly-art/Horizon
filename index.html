@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="app.css" />
+  <title>Desk</title>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">DESK</div>
+    <div id="modePill" class="pill">PAPER</div>
+    <div id="stackLbl" class="stack">—</div>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="home" class="on">Home</button>
+    <button data-tab="activity">Activity</button>
+    <button data-tab="coin">Coin</button>
+    <button data-tab="account">Account</button>
+  </nav>
+
+  <main>
+    <section id="tab-home" class="tab on">
+      <div class="cards">
+        <article class="card" id="card-scanner"><h3>Scanner</h3><p class="big" id="c-scanner">—</p></article>
+        <article class="card" id="card-auditor"><h3>Auditor</h3><p class="big" id="c-auditor">—</p></article>
+        <article class="card" id="card-analyst"><h3>Analyst</h3><div id="scoreRing" class="ring">0</div></article>
+        <article class="card" id="card-executor"><h3>Executor</h3><p class="big" id="c-executor">—</p></article>
+        <article class="card" id="card-risk"><h3>Risk</h3><p class="big" id="c-risk">—</p>
+          <div class="pills"><span class="pill red" id="stopPill">stop</span><span class="pill green" id="trailPill">trail</span></div>
+        </article>
+      </div>
+      <canvas id="miniChart" width="360" height="120"></canvas>
+    </section>
+
+    <section id="tab-activity" class="tab">
+      <ul id="activityList" class="feed"></ul>
+    </section>
+
+    <section id="tab-coin" class="tab">
+      <div id="coinMeta" class="meta">Pick a mint from Activity</div>
+      <canvas id="coinChart" width="360" height="220"></canvas>
+      <div id="layers" class="layers"></div>
+    </section>
+
+    <section id="tab-account" class="tab">
+      <p class="note">Plan B · Telegram only · settings are read-only here. Change via Telegram commands.</p>
+      <pre id="settingsPre" class="settings"></pre>
+      <p class="note dim">No web push on Plan B. Notifier = Telegram.</p>
+    </section>
+  </main>
+
+  <script src="chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
