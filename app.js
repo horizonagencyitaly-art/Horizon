@@ -54,7 +54,7 @@
       const state = await getJSON("state.json");
       $("modePill").textContent = state.mode || "PAPER";
       $("stackLbl").textContent = state.stack != null ? `$${Number(state.stack).toFixed(0)}` : "—";
-      $("c-scanner").textContent = (state.cards && state.cards.scanner) || `${state.waiting} pools`;
+      $("c-scanner").textContent = (state.cards && state.cards.scanner) || `${state.waiting ?? 0} pools`;
       $("c-auditor").textContent = (state.cards && state.cards.auditor) || "—";
       $("c-executor").textContent = (state.cards && state.cards.executor) || "—";
       $("c-risk").textContent = (state.cards && state.cards.risk) || "—";
