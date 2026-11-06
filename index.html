@@ -6,8 +6,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#000000" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="app.css?v=2" />
   <title>Desk</title>
 </head>
 <body>
@@ -16,14 +17,12 @@
     <div id="modePill" class="pill">PAPER</div>
     <div id="stackLbl" class="stack">—</div>
   </header>
-
   <nav class="tabs">
     <button data-tab="home" class="on">Home</button>
     <button data-tab="activity">Activity</button>
     <button data-tab="coin">Coin</button>
     <button data-tab="account">Account</button>
   </nav>
-
   <main>
     <section id="tab-home" class="tab on">
       <div class="cards">
@@ -37,25 +36,19 @@
       </div>
       <canvas id="miniChart" width="360" height="120"></canvas>
     </section>
-
-    <section id="tab-activity" class="tab">
-      <ul id="activityList" class="feed"></ul>
-    </section>
-
+    <section id="tab-activity" class="tab"><ul id="activityList" class="feed"></ul></section>
     <section id="tab-coin" class="tab">
       <div id="coinMeta" class="meta">Pick a mint from Activity</div>
       <canvas id="coinChart" width="360" height="220"></canvas>
       <div id="layers" class="layers"></div>
     </section>
-
     <section id="tab-account" class="tab">
       <p class="note">Plan B · Telegram only · settings are read-only here. Change via Telegram commands.</p>
       <pre id="settingsPre" class="settings"></pre>
       <p class="note dim">No web push on Plan B. Notifier = Telegram.</p>
     </section>
   </main>
-
-  <script src="chart.js"></script>
-  <script src="app.js"></script>
+  <script src="chart.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
